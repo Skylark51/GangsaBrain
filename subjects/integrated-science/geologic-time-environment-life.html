@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="지질 시대의 환경과 생물 단원에서 화석 문제를 처리하는 실제 사고 순서와 문제풀이 알고리즘">
+  <title>지질 시대의 환경과 생물 | GangsaBrain</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    :root{--ink:#182230;--muted:#667085;--line:#dfe3ea;--soft:#f6f8fb;--accent:#3549a5;--accent-soft:#eef1ff;--warn:#fff6df}
+    body{color:var(--ink)}
+    .unit-hero{margin:22px 0 28px;padding:28px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,#ffffff,#f3f5ff)}
+    .eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:var(--accent)}
+    .unit-hero h1{margin:8px 0 10px}.unit-hero p{max-width:820px;margin:0;color:var(--muted);line-height:1.7}
+    .brain-map{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:24px 0 38px}.brain-card{padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff}.brain-card strong{display:block;margin-bottom:7px}.brain-card span{color:var(--muted);line-height:1.6}
+    .algorithm{margin:22px 0;padding:22px;border-radius:18px;background:#111827;color:#f9fafb}.algorithm h3{margin-top:0}.algorithm ol{margin-bottom:0;padding-left:22px}.algorithm li{margin:8px 0;line-height:1.55}.flow{font-weight:800;color:#c7d2fe}
+    .record{margin:34px 0;padding:24px;border:1px solid var(--line);border-radius:20px;background:#fff}.record-head{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}.record-id{font-size:.76rem;font-weight:800;color:var(--accent);letter-spacing:.06em}.record h2{margin:5px 0 4px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tag{padding:5px 9px;border-radius:999px;background:var(--accent-soft);color:#3442a0;font-size:.76rem;font-weight:700}.problem-box{margin:18px 0;padding:18px;border-radius:14px;background:var(--soft)}.problem-box p{margin:4px 0;line-height:1.65}.thought-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}.thought{padding:17px;border:1px solid var(--line);border-radius:14px}.thought h3{margin:0 0 9px;font-size:1rem}.thought p,.thought li{color:#344054;line-height:1.65}.thought ol,.thought ul{margin:0;padding-left:21px}.answer{margin-top:16px;padding:14px 16px;border-left:4px solid var(--accent);background:#f5f6ff}.misconception{margin:18px 0;padding:18px;border-radius:15px;background:var(--warn)}.misconception strong{display:block;margin-bottom:6px}.matrix{width:100%;border-collapse:collapse;margin:18px 0}.matrix th,.matrix td{padding:12px;border:1px solid var(--line);text-align:left;vertical-align:top}.matrix th{background:var(--soft)}.mini-diagram{display:grid;gap:8px;margin-top:12px}.layer{padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:#fff}.arrow{text-align:center;color:var(--muted);font-weight:800}.summary{margin:38px 0;padding:25px;border-radius:20px;background:#eef1ff}.summary h2{margin-top:0}.summary code{font-family:inherit;font-weight:800;color:#26358e}.revision-note{font-size:.88rem;color:var(--muted)}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a href="../../index.html"><b>GangsaBrain</b></a>
+    <span>통합과학 2 · 지질 시대의 환경과 생물</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumb"><a href="../integrated-science.html">통합과학</a> / 변화와 다양성 / 지질 시대의 환경과 생물</div>
+
+  <section class="unit-hero">
+    <div class="eyebrow">II-1-01 · THINKING ARCHIVE</div>
+    <h1>지질 시대의 환경과 생물</h1>
+    <p>화석의 정의를 암기하는 데서 끝내지 않고, 문제를 본 순간 어떤 분류를 먼저 수행하고 어떤 사건열과 시대 정보를 자동으로 호출하는지를 기록한다. 문항별 풀이를 누적하면서 반복되는 반응을 공통 알고리즘으로 승격한다.</p>
+  </section>
+
+  <section aria-labelledby="map-title">
+    <h2 id="map-title">현재까지 확인된 반응 모듈</h2>
+    <div class="brain-map">
+      <div class="brain-card"><strong>화석 유형 판별</strong><span>생물 이름이나 사진을 보면 표준 화석인지 시상 화석인지 먼저 구분한다.</span></div>
+      <div class="brain-card"><strong>화석 형성 사건열</strong><span>순서 배열 문제임을 확인하는 즉시 죽음·매몰·화석화·퇴적·노출의 흐름을 호출한다.</span></div>
+      <div class="brain-card"><strong>지층의 시대 제한</strong><span>시상 화석으로 지층의 시대를 같다고 판단하지 않고 위아래 표준 화석으로 가능한 시대를 제한한다.</span></div>
+      <div class="brain-card"><strong>분포 그래프 해석</strong><span>생존 기간과 지리적 분포 면적을 축으로 보고 표준 화석과 시상 화석의 조건을 연결한다.</span></div>
+    </div>
+  </section>
+
+  <article class="record" id="fossil-001">
+    <div class="record-head">
+      <div>
+        <div class="record-id">IS2-GEO-FOSSIL-001</div>
+        <h2>산호 화석의 조건을 판단하는 문제</h2>
+      </div>
+      <div class="tags"><span class="tag">시상 화석</span><span class="tag">조건 판단</span><span class="tag">사진 자료</span></div>
+    </div>
+
+    <div class="problem-box">
+      <strong>문항 구조</strong>
+      <p>산호 화석 사진을 제시하고, 이러한 화석이 되기 위한 조건으로 생존 기간·분포 면적·개체 수의 특성을 고르는 문제.</p>
+      <p>보기: 생존 기간이 짧다 / 분포 면적이 좁다 / 개체 수가 많다.</p>
+    </div>
+
+    <div class="thought-grid">
+      <section class="thought">
+        <h3>최초 인식</h3>
+        <p>산호를 보자마자 개별 보기부터 읽지 않는다. 먼저 산호가 <b>시상 화석</b>이라는 분류를 호출한다.</p>
+      </section>
+      <section class="thought">
+        <h3>실제 사고 순서</h3>
+        <ol>
+          <li>시상 화석인가, 표준 화석인가?</li>
+          <li>시상 화석은 환경을 알려 준다.</li>
+          <li>같은 환경이 유지되는 동안 오래 생존할 수 있으므로 생존 기간은 길다.</li>
+          <li>특정 환경에서만 살기 때문에 지리적 분포 면적은 좁다.</li>
+          <li>화석으로 잘 발견되려면 개체 수는 많아야 한다.</li>
+        </ol>
+      </section>
+      <section class="thought">
+        <h3>선지 처리</h3>
+        <ul>
+          <li>ㄱ 생존 기간이 짧다 → 거짓</li>
+          <li>ㄴ 분포 면적이 좁다 → 참</li>
+          <li>ㄷ 개체 수가 많다 → 참</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="answer"><b>정답 판단:</b> ㄴ, ㄷ. 문제를 푸는 출발점은 산호의 모양을 자세히 관찰하는 것이 아니라, 산호를 시상 화석으로 분류하는 것이다.</div>
+
+    <div class="algorithm">
+      <h3>추출 알고리즘 A · 생물 사진이 나온 화석 문제</h3>
+      <ol>
+        <li><span class="flow">생물 확인</span> → 생물의 세부 외형보다 이름과 대표성을 먼저 본다.</li>
+        <li><span class="flow">화석 유형 분류</span> → 표준 화석 / 시상 화석.</li>
+        <li><span class="flow">제공 정보 결정</span> → 표준 화석은 시대, 시상 화석은 환경.</li>
+        <li><span class="flow">조건 자동 연결</span> → 시상 화석은 긴 생존 기간·좁은 분포, 표준 화석은 짧은 생존 기간·넓은 분포.</li>
+        <li>그 다음에 보기를 읽으며 조건과 대조한다.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="record" id="fossil-002">
+    <div class="record-head">
+      <div>
+        <div class="record-id">IS2-GEO-FOSSIL-002</div>
+        <h2>화석이 생성되는 순서를 배열하는 문제</h2>
+      </div>
+      <div class="tags"><span class="tag">과정 배열</span><span class="tag">화석의 정의</span><span class="tag">사건열 호출</span></div>
+    </div>
+
+    <div class="problem-box">
+      <strong>문항 구조</strong>
+      <p>생물의 죽음, 매몰과 화석화, 계속된 퇴적, 융기·침식에 따른 노출을 나타낸 네 그림의 순서를 배열한다.</p>
+      <div class="mini-diagram" aria-label="화석 형성 과정 요약">
+        <div class="layer">① 생물체가 죽거나 생물의 흔적이 남는다.</div><div class="arrow">↓</div>
+        <div class="layer">② 유해 또는 흔적이 퇴적물에 빠르게 묻히고 화석화 작용을 받는다.</div><div class="arrow">↓</div>
+        <div class="layer">③ 위에 퇴적물이 계속 쌓이며 지층 속에 보존된다.</div><div class="arrow">↓</div>
+        <div class="layer">④ 지층이 융기하고 침식되어 화석이 지표에 드러난다.</div>
+      </div>
+    </div>
+
+    <div class="thought-grid">
+      <section class="thought">
+        <h3>속도가 느려지는 접근</h3>
+        <p>네 그림을 하나씩 독립적으로 관찰하고 그때마다 무슨 장면인지 해석하면 정답은 찾을 수 있지만 반응 시간이 길어진다.</p>
+      </section>
+      <section class="thought">
+        <h3>숙련된 접근</h3>
+        <p>‘화석 생성 순서를 묻는다’는 사실을 인지하는 순간, 이미 알고 있는 사건열을 먼저 떠올린 뒤 각 그림을 그 자리에 배치한다.</p>
+      </section>
+      <section class="thought">
+        <h3>그림 배치</h3>
+        <p>제시된 그림에서는 <b>ㄴ → ㄷ → ㄹ → ㄱ</b>의 순서가 된다.</p>
+      </section>
+    </div>
+
+    <div class="misconception">
+      <strong>선행 오개념 제거 · 화석은 반드시 뼈일 필요가 없다.</strong>
+      화석은 과거 생물의 <b>유해 또는 흔적</b>이다. 뼈와 껍데기뿐 아니라 발자국, 기어간 자국, 배설물, 굴과 같은 생활 흔적도 화석이 될 수 있다.
+    </div>
+
+    <div class="misconception">
+      <strong>과정 알고리즘의 적용 범위</strong>
+      ‘생물체의 죽음 → 매몰’은 유해 화석을 설명할 때의 기본 흐름이다. 발자국이나 배설물과 같은 흔적 화석에서는 생물의 죽음이 반드시 선행할 필요가 없다. 따라서 더 넓은 공통 흐름은 <b>유해 또는 흔적의 생성 → 빠른 매몰 → 보존·화석화 → 추가 퇴적 → 융기·침식·노출</b>이다.
+    </div>
+
+    <div class="algorithm">
+      <h3>추출 알고리즘 B · 과정 순서 배열 문제</h3>
+      <ol>
+        <li>문제의 요구가 ‘순서’임을 먼저 확인한다.</li>
+        <li>그림을 읽기 전에 해당 현상의 표준 사건열을 머릿속에 호출한다.</li>
+        <li>각 그림은 독립적으로 해석하지 않고 사건열의 빈칸에 끼워 넣는다.</li>
+        <li>첫 사건과 마지막 사건을 먼저 고정한 뒤 중간 단계를 배열하면 판단량이 줄어든다.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="record" id="fossil-003">
+    <div class="record-head">
+      <div>
+        <div class="record-id">IS2-GEO-FOSSIL-003</div>
+        <h2>고사리 화석과 위아래 표준 화석으로 지층의 시대를 제한하는 문제</h2>
+      </div>
+      <div class="tags"><span class="tag">지층 대비</span><span class="tag">표준·시상 화석</span><span class="tag">분포 그래프</span></div>
+    </div>
+
+    <div class="problem-box">
+      <strong>문항 구조</strong>
+      <p>서로 다른 지층에서 고사리 화석 A와 B가 발견되고, 위아래 지층에는 방추충·삼엽충·공룡 화석이 제시된다. 매머드·공룡·산호 화석의 생존 기간과 지리적 분포 면적을 그래프 ㄱ~ㄷ과 연결한다.</p>
+    </div>
+
+    <div class="thought-grid">
+      <section class="thought">
+        <h3>1. 같은 고사리라는 이유로 시대를 같게 두지 않는다</h3>
+        <p>고사리는 시상 화석이며 현재에도 존재한다. 따라서 A와 B에서 모두 고사리가 발견되었다는 사실만으로 두 지층이 같은 시대에 형성되었다고 판단할 수 없다.</p>
+      </section>
+      <section class="thought">
+        <h3>2. 위아래 표준 화석으로 범위를 제한한다</h3>
+        <ul>
+          <li>A 고사리의 위에는 방추충, 아래에는 삼엽충이 있으므로 A는 대략 고생대의 범위로 제한된다.</li>
+          <li>B 고사리의 위아래에는 공룡 화석이 있으므로 B는 중생대의 범위로 제한된다.</li>
+        </ul>
+      </section>
+      <section class="thought">
+        <h3>3. 시대가 맞지 않는 후보를 제거한다</h3>
+        <p>매머드는 신생대의 대표 생물이다. 따라서 공룡 화석으로 둘러싸인 중생대 지층 사이에 들어갈 수 없다.</p>
+      </section>
+      <section class="thought">
+        <h3>4. 분포 그래프를 유형과 연결한다</h3>
+        <p>산호는 시상 화석이므로 생존 기간이 길고 지리적 분포 면적은 좁다. 따라서 산호는 그래프 ㄱ에 해당한다.</p>
+      </section>
+    </div>
+
+    <table class="matrix">
+      <thead><tr><th>화석</th><th>시대·유형 판단</th><th>그래프</th></tr></thead>
+      <tbody>
+        <tr><td>매머드 X</td><td>신생대, 비교적 짧은 생존 기간과 넓은 분포</td><td>ㄷ</td></tr>
+        <tr><td>공룡 Y</td><td>중생대에 널리 분포하며 매머드보다 긴 생존 범위</td><td>ㄴ</td></tr>
+        <tr><td>산호 Z</td><td>시상 화석, 긴 생존 기간과 좁은 분포</td><td>ㄱ</td></tr>
+      </tbody>
+    </table>
+
+    <div class="answer"><b>최종 연결:</b> X-ㄷ, Y-ㄴ, Z-ㄱ. 동일한 시상 화석의 존재는 지층의 동시성을 보장하지 않으며, 시대 판단은 표준 화석과 층서 관계를 이용한다.</div>
+
+    <div class="algorithm">
+      <h3>추출 알고리즘 C · 여러 지층의 시대를 비교하는 문제</h3>
+      <ol>
+        <li><span class="flow">공통 화석 확인</span> → 그 화석이 표준 화석인지 시상 화석인지 먼저 판별한다.</li>
+        <li><span class="flow">시상 화석이면 동시성 판단에서 제외</span> → 같은 생물이 있다고 같은 시대라고 두지 않는다.</li>
+        <li><span class="flow">위아래 표준 화석 확인</span> → 각 지층이 들어갈 수 있는 시대 범위를 위와 아래에서 동시에 제한한다.</li>
+        <li><span class="flow">대표 생물의 시대와 대조</span> → 고생대·중생대·신생대가 맞지 않는 후보를 제거한다.</li>
+        <li><span class="flow">그래프 축 해석</span> → 생존 기간과 지리적 분포 면적을 화석 유형의 조건과 연결한다.</li>
+      </ol>
+    </div>
+  </article>
+
+  <section class="summary">
+    <h2>현재까지의 공통 반응식</h2>
+    <p><code>생물·화석 제시 → 화석 유형 분류 → 제공 가능한 정보 결정 → 시대 또는 환경 판단</code></p>
+    <p><code>과정 배열 요구 → 표준 사건열 호출 → 그림을 사건열에 배치</code></p>
+    <p><code>지층 대비 → 시상 화석 배제 → 위아래 표준 화석으로 시대 범위 제한 → 시대 부적합 후보 제거</code></p>
+    <p class="revision-note">이 문서는 문항이 추가될 때마다 개별 풀이보다 반복되는 판단 순서를 우선 갱신한다.</p>
+  </section>
+</main>
+</body>
+</html>
